@@ -48,7 +48,7 @@ valor dessa propriedade a quantidade passada por parâmetro;
 booleano que representa "verdadeiro";
 */
 pessoa.andar = function(x) {
-  pessoa.andar.caminhouQuantosMetros = x;
+  pessoa.caminhouQuantosMetros += x;
   pessoa.andando = true;
 }  
 
@@ -97,32 +97,29 @@ Agora vamos brincar um pouco com o objeto criado:
 Qual o nome completo da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.nomeCompleto = function() {
-  return pessoa.nome + " " + pessoa.sobrenome;
-}
 pessoa.nomeCompleto();
-//'Mário Vieira'
+//'Olá! Meu nome é Mário Vieira!'
 
 /*
 Qual a idade da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.idade;
-//27
+pessoa.mostrarIdade();
+//'Olá, eu tenho 27 anos!'
 
 /*
 Qual o peso da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.peso;
-//70
+pessoa.mostrarPeso();
+//'Eu peso 70kg.'
 
 /*
 Qual a altura da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.altura;
-//1.73
+pessoa.mostrarAltura;
+//'Minha altura é 1.73m.'
 
 /*
 Faça a `pessoa` fazer 3 aniversários.
@@ -157,7 +154,7 @@ pessoa.andando
 /*
 Se a pessoa ainda está andando, faça-a parar.
 */
-pessoa.parar
+pessoa.parar()
 
 /*
 E agora: a pessoa ainda está andando? (Use uma instrução para responder e
@@ -170,8 +167,8 @@ pessoa.andando
 Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
 inline ao lado da instrução para mostrar a resposta retornada)
 */
-pessoa.andar.caminhouQuantosMetros
-//40
+pessoa.caminhouQuantosMetros
+//90
 
 /*
 Agora vamos deixar a brincadeira um pouco mais divertida! :D
@@ -217,5 +214,5 @@ pessoa.metroOuMetros = function() {
 
 // Agora, apresente-se ;)
 pessoa.apresentacao = function() {
-  return "Olá, " + pessoa.qualSexo() + pessoa.nomeCompleto() + ", tenho " + pessoa.idade + pessoa.idadeMaiorQueUm() + ", " + pessoa.altura + "m, meu peso é " + pessoa.peso + "kg e, só hoje, eu já caminhei " + pessoa.andar.caminhouQuantosMetros + pessoa.metroOuMetros() + "!";
+  return "Olá, " + pessoa.qualSexo() + pessoa.nome + " " + pessoa.sobrenome + ", tenho " + pessoa.idade + pessoa.idadeMaiorQueUm() + ", " + pessoa.altura + "m, meu peso é " + pessoa.peso + "kg e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + pessoa.metroOuMetros() + "!";
 }
