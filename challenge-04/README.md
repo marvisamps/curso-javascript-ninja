@@ -15,10 +15,11 @@ var isTruthy = function(a){
 isTruthy(0)
 isTruthy(-0)
 isTruthy(undefined)
-isTruty(null)
+isTruthy(null)
 isTruthy('')
 isTruthy("")
 isTruthy(false)
+isTruthy(NaN)
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
@@ -113,7 +114,7 @@ citado acima, no lugar de "pessoas".
 */
 var pessoaEntrarNoCarro = function(numeroPessoas){
   var assentosRestantes = (carro.assentos - carro.quantidadePessoas) ? true : false;
-  if((carro.assentos - carro.quantidadePessoas) == 0) {
+  if((carro.assentos - carro.quantidadePessoas) == 0 && numeroPessoas >= 0) {
      return 'O carro já está lotado!';
    }
   if(numeroPessoas > (carro.assentos - carro.quantidadePessoas)){
@@ -161,11 +162,11 @@ pessoaEntrarNoCarro(4) //"Só cabem mais 3 pessoas!"
 pessoaEntrarNoCarro(3) //"Já temos 5 pessoas no carro!"
 
 // Tire 4 pessoas do carro.
-carro.quantidadePessoas -= 4;
+pessoaEntrarNoCarro(-4) //"Já temos 1 pessoas no carro!"
 
 // Adicione 10 pessoas no carro.
-carro.quantidadePessoas += 10;
+pessoaEntrarNoCarro(10) //"Só cabem mais 4 pessoas!"
 
 // Quantas pessoas temos no carro?
-11
+1
 ```
