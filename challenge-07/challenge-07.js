@@ -9,7 +9,7 @@ A função deverá retornar o array atualizado.
 */
 var arr2 = [];
 function addItem(itens){
-  arr2.push(itnes);
+  arr2.push(itens);
   return arr2;
 }
 
@@ -77,7 +77,7 @@ for(num = 100; num <= 120; num++){
 }
 
 console.log( 'Números ímpares entre 111 e 125:' );
-for(num = 100; num <= 120; num++){
+for(num = 111; num <= 125; num++){
   if(!(num % 2 == 0)){
     console.log(num);
   }
