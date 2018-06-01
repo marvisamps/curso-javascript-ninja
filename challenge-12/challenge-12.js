@@ -18,7 +18,7 @@
   Mostre no console, em um array, todas as propriedades do objeto acima.
   Não use nenhuma estrutura de repetição, nem crie o array manualmente.
   */
-  console.log([person.name, person.lastname, person.age]);
+  console.log(Object.keys(person));
 
   /*
   Crie um array vazio chamado `books`.
@@ -42,13 +42,13 @@
   Mostre no console todos os livros.
   */
   console.log(books);
-
   console.log( '\nLivro que está sendo removido:' );
   /*
   Remova o último livro, e mostre-o no console.
   */
-  books.pop(2);
-
+  var last = books.pop();
+  console.log(last)
+  
   console.log( '\nAgora sobraram somente os livros:' );
   /*
   Mostre no console os livros restantes.
@@ -58,26 +58,30 @@
   /*
   Converta os objetos que ficaram em `books` para strings.
   */
-  // ?
-  console.log( '\nLivros em formato string:' );
-
+  console.log( '\nLivros em formato string:');
+  books = JSON.stringify(books);
   /*
   Mostre os livros nesse formato no console:
   */
-  // ?
+  console.log(books);
 
   /*
   Converta os livros novamente para objeto.
   */
-  // ?
   console.log( '\nAgora os livros são objetos novamente:' );
+  books = JSON.parse(books);
+  console.log(books);
 
   /*
   Mostre no console todas as propriedades e valores de todos os livros,
   no formato abaixo:
       "[PROPRIEDADE]: [VALOR]"
   */
-  // ?
+  for(var i = 0; i < books.length; i++){
+    for(var prop in books[i]){
+      console.log(prop + ': ' + books[i][prop]);
+    }
+  }
 
   /*
   Crie um array chamado `myName`. Cada item desse array deve ser uma letra do
@@ -85,26 +89,18 @@
   */
   var myName = ['M','á','r','i','o']
   console.log( '\nMeu nome é:' );
-
   /*
   Juntando todos os itens do array, mostre no console seu nome.
   */
-  for(var counter = 0; counter <= myName.length; counter++){
-    console.log(myName[counter]);
-  }
-
+  console.log(myName.join(''));
   console.log( '\nMeu nome invertido é:' );
-
   /*
   Ainda usando o objeto acima, mostre no console seu nome invertido.
   */
-  for(var counter = myName.length; counter === 0; counter--){
-    console.log(myName[counter]);
-  }
-
+  console.log(myName.reverse().join(''));
   console.log( '\nAgora em ordem alfabética:' );
   /*
   Mostre todos os itens do array acima, odenados alfabéticamente.
   */
-  // ?
-});
+  console.log(myName.sort());
+})();
